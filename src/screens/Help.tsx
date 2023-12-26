@@ -1,11 +1,17 @@
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import React from 'react';
-import {WebView} from 'react-native-webview';
+import {
+  ActivityIndicator,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, {useState} from 'react';
+import {WebView, WebViewNavigation} from 'react-native-webview';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function Help() {
   const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(true);
 
   const openDrawer = () => {
     navigation.openDrawer();
@@ -30,6 +36,16 @@ export default function Help() {
     document.body.style.userSelect = 'none'; 
   `;
 
+  const handleLoad = (event: WebViewNavigation) => {
+    // 'onLoad' event indicates the WebView content has started loading
+    setIsLoading(true);
+  };
+
+  const handleLoadEnd = () => {
+    // 'onLoadEnd' event indicates the WebView content has finished loading
+    setIsLoading(false);
+  };
+
   return (
     <View style={styles.container}>
       <WebView
@@ -43,7 +59,14 @@ export default function Help() {
         style={styles.webview}
         decelerationRate="normal"
         bounces={false}
+        onLoad={() => handleLoad}
+        onLoadEnd={handleLoadEnd}
       />
+      {isLoading && (
+        <View style={styles.loader}>
+          <ActivityIndicator size="large" color="#03A803" />
+        </View>
+      )}
       <TouchableOpacity style={styles.floatingButton} onPress={openDrawer}>
         <Icon name="menu" size={30} color="#FFF" />
       </TouchableOpacity>
@@ -74,5 +97,11 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
+  },
+  loader: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
 });
