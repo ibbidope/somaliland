@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
   tabBarItem: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 8,
   },
   icon: {
     width: 25,
