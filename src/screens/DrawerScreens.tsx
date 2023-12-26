@@ -41,6 +41,9 @@ export default function DrawerScreens({uri}: ScreenProps) {
         injectedJavaScript={replaceFooter}
         showsVerticalScrollIndicator={false}
         overScrollMode="never"
+        style={{flex: 1}}
+        decelerationRate="normal"
+        bounces={false}
       />
       <TouchableOpacity style={styles.floatingButton} onPress={openDrawer}>
         <Icon name="menu" size={30} color="#FFF" />

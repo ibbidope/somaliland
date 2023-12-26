@@ -25,9 +25,9 @@ export default function Login() {
       existingFooter.parentNode.replaceChild(newFooter, existingFooter);
     }
     
-    document.documentElement.style.webkitTouchCallout = 'none'; // Disable long press on iOS
-    document.documentElement.style.webkitUserSelect = 'none'; // Disable text selection on iOS
-    document.body.style.userSelect = 'none'; // Disable text selection on Android
+    document.documentElement.style.webkitTouchCallout = 'none'; 
+    document.documentElement.style.webkitUserSelect = 'none'; 
+    document.body.style.userSelect = 'none'; 
   `;
 
   return (
@@ -39,8 +39,10 @@ export default function Login() {
         injectedJavaScript={replaceFooter}
         showsVerticalScrollIndicator={false}
         overScrollMode="never"
-        javaScriptEnabled={true} // Enable JavaScript
+        javaScriptEnabled={true}
         style={styles.webview}
+        decelerationRate="normal"
+        bounces={false}
       />
       <TouchableOpacity style={styles.floatingButton} onPress={openDrawer}>
         <Icon name="menu" size={30} color="#FFF" />

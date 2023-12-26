@@ -39,8 +39,10 @@ export default function Home() {
         injectedJavaScript={replaceFooter}
         showsVerticalScrollIndicator={false}
         overScrollMode="never"
-        javaScriptEnabled={true} // Enable JavaScript
+        javaScriptEnabled={true}
         style={styles.webview}
+        decelerationRate="normal"
+        bounces={false}
       />
       <TouchableOpacity style={styles.floatingButton} onPress={openDrawer}>
         <Icon name="menu" size={30} color="#FFF" />
