@@ -8,32 +8,32 @@ import Services from '../screens/Services';
 import Help from '../screens/Help';
 import Login from '../screens/Login';
 
-interface QrCodeButtonProps {
-  children: React.ReactNode;
-  onpress: () => void;
-}
+// interface QrCodeButtonProps {
+//   children: React.ReactNode;
+//   onpress: () => void;
+// }
 
 const Tab = createBottomTabNavigator();
 
-const QrCodeButton: React.FC<QrCodeButtonProps> = ({children, onpress}) => (
-  <TouchableOpacity
-    onPress={onpress}
-    activeOpacity={1}
-    style={{top: -30, justifyContent: 'center', alignItems: 'center'}}>
-    <View
-      style={{
-        width: 60,
-        height: 60,
-        borderRadius: 35,
-        backgroundColor: '#03A803',
-        borderWidth: 1,
-        borderColor: '#03A803',
-        elevation: 10,
-      }}>
-      {children}
-    </View>
-  </TouchableOpacity>
-);
+// const QrCodeButton: React.FC<QrCodeButtonProps> = ({children, onpress}) => (
+//   <TouchableOpacity
+//     onPress={onpress}
+//     activeOpacity={1}
+//     style={{top: -30, justifyContent: 'center', alignItems: 'center'}}>
+//     <View
+//       style={{
+//         width: 60,
+//         height: 60,
+//         borderRadius: 35,
+//         backgroundColor: '#03A803',
+//         borderWidth: 1,
+//         borderColor: '#03A803',
+//         elevation: 10,
+//       }}>
+//       {children}
+//     </View>
+//   </TouchableOpacity>
+// );
 
 const BottomTabNavigator = () => {
   const navigation = useNavigation();
@@ -85,23 +85,29 @@ const BottomTabNavigator = () => {
         options={{
           tabBarIcon: ({focused}) => {
             return (
-              <Image
-                source={require('../assets/icons/grid.png')}
-                resizeMode="contain"
-                style={{width: 32, height: 32, tintColor: '#FFF'}}
-              />
+              <View style={styles.tabBarItem}>
+                <Image
+                  source={require('../assets/icons/grid.png')}
+                  resizeMode="contain"
+                  style={[
+                    styles.icon,
+                    focused ? styles.iconFocused : styles.iconInactive,
+                  ]}
+                />
+                <Text
+                  style={[
+                    styles.label,
+                    focused ? styles.labelFocused : styles.labelInactive,
+                    {fontWeight: 'bold'},
+                  ]}>
+                  Services
+                </Text>
+              </View>
             );
           },
-          tabBarButton: props => (
-            <QrCodeButton
-              onpress={() => {
-                navigation.navigate('Services' as never);
-              }}
-              {...props}
-            />
-          ),
         }}
       />
+
       <Tab.Screen
         name="Help"
         component={Help}
