@@ -43,7 +43,7 @@ export default function Home() {
         style={styles.webview}
       />
       <TouchableOpacity style={styles.floatingButton} onPress={openDrawer}>
-        <Icon name="menu" size={35} color="#FFF" />
+        <Icon name="menu" size={30} color="#FFF" />
       </TouchableOpacity>
     </View>
   );
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     right: 20,
     backgroundColor: '#F7931E',
     borderRadius: 30,
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
   },
