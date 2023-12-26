@@ -1,5 +1,11 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, Image, ImageBackground} from 'react-native';
+import {
+  StyleSheet,
+  Image,
+  ImageBackground,
+  View,
+  ActivityIndicator,
+} from 'react-native';
 
 interface SplashScreenProps {
   navigation: any;
@@ -22,6 +28,9 @@ const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
         source={require('../assets/images/logo-green.png')}
         style={styles.logo}
       />
+      <View style={{marginTop: 6}}>
+        <ActivityIndicator size="large" color="#03A803" />
+      </View>
     </ImageBackground>
   );
 };

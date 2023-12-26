@@ -50,7 +50,7 @@ export default function Services() {
     <View style={styles.container}>
       <WebView
         source={{
-          uri: 'https://www.govsomaliland.online/articles/services',
+          uri: 'https://www.govsomaliland.online/articles/services/?apple=1',
         }}
         injectedJavaScript={replaceFooter}
         showsVerticalScrollIndicator={false}

@@ -14,47 +14,59 @@ const drawerData: DrawerSection[] = [
     routes: [
       {
         name: 'History',
-        uri: 'https://www.govsomaliland.online/article/history',
+        uri: 'https://www.govsomaliland.online/article/history/?apple=1',
       },
       {
         name: 'Constitution',
-        uri: 'https://www.govsomaliland.online/article/constitution',
+        uri: 'https://www.govsomaliland.online/article/constitution/?apple=1',
       },
-      {name: 'Flag', uri: 'https://www.govsomaliland.online/article/flag'},
+      {
+        name: 'Flag',
+        uri: 'https://www.govsomaliland.online/article/flag/?apple=1',
+      },
       {
         name: 'National Symbols',
-        uri: 'https://www.govsomaliland.online/article/national-symbols',
+        uri: 'https://www.govsomaliland.online/article/national-symbols/?apple=1',
       },
       {
         name: 'Maps & Regions',
-        uri: 'https://www.govsomaliland.online/article/maps-and-regions',
+        uri: 'https://www.govsomaliland.online/article/maps-and-regions/?apple=1',
       },
       {
         name: 'People & Culture',
-        uri: 'https://www.govsomaliland.online/article/people-and-culture',
+        uri: 'https://www.govsomaliland.online/article/people-and-culture/?apple=1',
       },
       {
         name: 'The Economy',
-        uri: 'https://www.govsomaliland.online/article/the-economy',
+        uri: 'https://www.govsomaliland.online/article/the-economy/?apple=1',
       },
     ],
   },
   {
     sectionTitle: 'The Government',
     routes: [
-      {name: 'Presidency', uri: 'https://presidency.govsomaliland.org/'},
+      {
+        name: 'Presidency',
+        uri: 'https://presidency.govsomaliland.org//?apple=1',
+      },
       {
         name: 'Ministries',
-        uri: 'https://www.govsomaliland.org/article/departments',
+        uri: 'https://www.govsomaliland.org/article/departments/?apple=1',
       },
       {
         name: 'Agencies',
-        uri: 'https://www.govsomaliland.org/article/somaliland-agencies',
+        uri: 'https://www.govsomaliland.org/article/somaliland-agencies/?apple=1',
       },
-      {name: 'House of Representatives', uri: 'https://hor.govsomaliland.org/'},
-      {name: 'House of Elders', uri: 'https://hoe.govsomaliland.org/'},
-      {name: 'Attorney General Office', uri: 'https://ag.govsomaliland.org/'},
-      {name: 'Courts', uri: 'https://courts.govsomaliland.org/'},
+      {
+        name: 'House of Representatives',
+        uri: 'https://hor.govsomaliland.org/?apple=1',
+      },
+      {name: 'House of Elders', uri: 'https://hoe.govsomaliland.org/?apple=1'},
+      {
+        name: 'Attorney General Office',
+        uri: 'https://ag.govsomaliland.org/?apple=1',
+      },
+      {name: 'Courts', uri: 'https://courts.govsomaliland.org/?apple=1'},
     ],
   },
   {
@@ -62,71 +74,71 @@ const drawerData: DrawerSection[] = [
     routes: [
       {
         name: 'National ID',
-        uri: 'https://www.govsomaliland.online/article/national-id-application-form',
+        uri: 'https://www.govsomaliland.online/article/national-id-application-form/?apple=1',
       },
       {
         name: 'Property Registration',
-        uri: 'https://www.govsomaliland.online/article/online-property-registration',
+        uri: 'https://www.govsomaliland.online/article/online-property-registration/?apple=1',
       },
       {
         name: 'Building Permit',
-        uri: 'https://www.govsomaliland.online/article/building-permit',
+        uri: 'https://www.govsomaliland.online/article/building-permit/?apple=1',
       },
       {
         name: 'Property & Tax',
-        uri: 'https://www.govsomaliland.online/article/taxes-for-land-and-residential-house',
+        uri: 'https://www.govsomaliland.online/article/taxes-for-land-and-residential-house/?apple=1',
       },
       {
         name: 'Building Permit Tax',
-        uri: 'https://www.govsomaliland.online/article/building-permit-tax',
+        uri: 'https://www.govsomaliland.online/article/building-permit-tax/?apple=1',
       },
       {
         name: 'Tax on Property Transfer',
-        uri: 'https://www.govsomaliland.online/article/tax-on-transfer-of-property',
+        uri: 'https://www.govsomaliland.online/article/tax-on-transfer-of-property/?apple=1',
       },
       {
         name: 'Land Registration',
-        uri: 'https://www.govsomaliland.online/article/online-land-registration',
+        uri: 'https://www.govsomaliland.online/article/online-land-registration/?apple=1',
       },
       {
         name: 'Land Tax',
-        uri: 'https://www.govsomaliland.online/article/land-tax',
+        uri: 'https://www.govsomaliland.online/article/land-tax/?apple=1',
       },
       {
         name: 'Tax on Land Transfer',
-        uri: 'https://www.govsomaliland.online/article/tax-on-transfer-of-land',
+        uri: 'https://www.govsomaliland.online/article/tax-on-transfer-of-land/?apple=1',
       },
       {
         name: 'Business Registration',
-        uri: 'https://www.govsomaliland.online/article/business-registration',
+        uri: 'https://www.govsomaliland.online/article/business-registration/?apple=1',
       },
       {
         name: 'Business Tax',
-        uri: 'https://www.govsomaliland.online/article/business-tax',
+        uri: 'https://www.govsomaliland.online/article/business-tax/?apple=1',
       },
       {
         name: 'Birth Certificate',
-        uri: 'https://www.govsomaliland.online/article/issue-of-a-birth-certificate',
+        uri: 'https://www.govsomaliland.online/article/issue-of-a-birth-certificate/?apple=1',
       },
       {
         name: 'Birth Certificate Foreign',
-        uri: 'https://www.govsomaliland.online/article/issue-of-a-birth-certificate-foreign',
+        uri: 'https://www.govsomaliland.online/article/issue-of-a-birth-certificate-foreign/?apple=1',
       },
       {
         name: 'Marriage Certificate',
-        uri: 'https://www.govsomaliland.online/article/issue-of-a-marriage-certificate',
+        uri: 'https://www.govsomaliland.online/article/issue-of-a-marriage-certificate/?apple=1',
       },
       {
         name: 'Divorce Certificate',
-        uri: 'https://www.govsomaliland.online/article/divorce-certificate',
+        uri: 'https://www.govsomaliland.online/article/divorce-certificate/?apple=1',
       },
       {
         name: 'Death Certificate',
-        uri: 'https://www.govsomaliland.online/article/issue-of-a-death-certificate',
+        uri: 'https://www.govsomaliland.online/article/issue-of-a-death-certificate/?apple=1',
       },
       {
         name: 'Public Complaints',
-        uri: 'https://www.govsomaliland.online/article/public-complaints',
+        uri: 'https://www.govsomaliland.online/article/public-complaints/?apple=1',
       },
     ],
   },
@@ -135,31 +147,31 @@ const drawerData: DrawerSection[] = [
     routes: [
       {
         name: 'legislations',
-        uri: 'https://www.govsomaliland.online/articles/legislations ',
+        uri: 'https://www.govsomaliland.online/articles/legislations/?apple=1',
       },
       {
         name: 'Regulations',
-        uri: 'https://www.govsomaliland.online/articles/regulations',
+        uri: 'https://www.govsomaliland.online/articles/regulations/?apple=1',
       },
       {
         name: 'Policies',
-        uri: 'https://www.govsomaliland.online/articles/policies',
+        uri: 'https://www.govsomaliland.online/articles/policies/?apple=1',
       },
       {
         name: 'Strategics',
-        uri: 'https://www.govsomaliland.online/articles/strategics',
+        uri: 'https://www.govsomaliland.online/articles/strategics/?apple=1',
       },
       {
         name: 'Guidelines',
-        uri: 'https://www.govsomaliland.online/articles/guidelines',
+        uri: 'https://www.govsomaliland.online/articles/guidelines/?apple=1',
       },
       {
         name: 'Reports',
-        uri: 'https://www.govsomaliland.online/articles/reports',
+        uri: 'https://www.govsomaliland.online/articles/reports/?apple=1',
       },
       {
         name: 'Researches',
-        uri: 'https://www.govsomaliland.online/articles/researches',
+        uri: 'https://www.govsomaliland.online/articles/researches/?apple=1',
       },
     ],
   },
@@ -168,16 +180,19 @@ const drawerData: DrawerSection[] = [
     routes: [
       {
         name: 'News',
-        uri: 'https://www.govsomaliland.online/articles/news-media',
+        uri: 'https://www.govsomaliland.online/articles/news-media/?apple=1',
       },
       {
         name: 'Press Releases',
-        uri: 'https://www.govsomaliland.online/articles/press-releases',
+        uri: 'https://www.govsomaliland.online/articles/press-releases/?apple=1',
       },
-      {name: 'Events', uri: 'https://www.govsomaliland.online/articles/events'},
+      {
+        name: 'Events',
+        uri: 'https://www.govsomaliland.online/articles/events/?apple=1',
+      },
       {
         name: 'Gallery',
-        uri: 'https://www.govsomaliland.online/articles/gallery',
+        uri: 'https://www.govsomaliland.online/articles/gallery/?apple=1',
       },
     ],
   },

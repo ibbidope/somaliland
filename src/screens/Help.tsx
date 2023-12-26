@@ -50,7 +50,7 @@ export default function Help() {
     <View style={styles.container}>
       <WebView
         source={{
-          uri: 'https://www.govsomaliland.online/contact-us',
+          uri: 'https://www.govsomaliland.online/contact-us/?apple=1',
         }}
         injectedJavaScript={replaceFooter}
         showsVerticalScrollIndicator={false}

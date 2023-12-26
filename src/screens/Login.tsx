@@ -50,7 +50,7 @@ export default function Login() {
     <View style={styles.container}>
       <WebView
         source={{
-          uri: 'https://www.govsomaliland.online/user/signin',
+          uri: 'https://www.govsomaliland.online/user/signin/?apple=1',
         }}
         injectedJavaScript={replaceFooter}
         showsVerticalScrollIndicator={false}
