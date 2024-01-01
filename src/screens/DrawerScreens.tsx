@@ -1,6 +1,7 @@
 import {
   ActivityIndicator,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -16,6 +17,7 @@ interface ScreenProps {
 export default function DrawerScreens({uri}: ScreenProps) {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const openDrawer = () => {
     navigation.openDrawer();
@@ -40,29 +42,43 @@ export default function DrawerScreens({uri}: ScreenProps) {
     document.body.style.userSelect = 'none'; 
   `;
 
-  const handleLoad = (event: WebViewNavigation) => {
-    // 'onLoad' event indicates the WebView content has started loading
+  const handleLoad = () => {
     setIsLoading(true);
+    setError(false);
   };
 
   const handleLoadEnd = () => {
-    // 'onLoadEnd' event indicates the WebView content has finished loading
     setIsLoading(false);
+  };
+
+  const handleError = () => {
+    setIsLoading(false);
+    setError(true);
   };
 
   return (
     <View style={styles.container}>
-      <WebView
-        source={{uri}}
-        injectedJavaScript={replaceFooter}
-        showsVerticalScrollIndicator={false}
-        overScrollMode="never"
-        style={{flex: 1}}
-        decelerationRate="normal"
-        bounces={false}
-        onLoad={() => handleLoad}
-        onLoadEnd={handleLoadEnd}
-      />
+      {!error ? (
+        <WebView
+          source={{uri}}
+          injectedJavaScript={replaceFooter}
+          showsVerticalScrollIndicator={false}
+          overScrollMode="never"
+          style={{flex: 1}}
+          decelerationRate="normal"
+          bounces={false}
+          onLoad={handleLoad}
+          onLoadEnd={handleLoadEnd}
+          onError={handleError}
+        />
+      ) : (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>
+            There was an error loading the content. Please check your internet
+            connection and try again.
+          </Text>
+        </View>
+      )}
       {isLoading && (
         <View style={styles.loader}>
           <ActivityIndicator size="large" color="#03A803" />
@@ -101,5 +117,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    fontSize: 16,
+    textAlign: 'center',
   },
 });
