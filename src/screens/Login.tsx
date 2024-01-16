@@ -5,15 +5,18 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import {WebView, WebViewNavigation} from 'react-native-webview';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useBackHandler} from '@react-native-community/hooks';
 
 export default function Login() {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [canGoBack, setCanGoBack] = useState(false);
+  const webviewRef = useRef(null);
 
   const openDrawer = () => {
     navigation.openDrawer();
@@ -38,24 +41,43 @@ export default function Login() {
     document.body.style.userSelect = 'none'; 
   `;
 
-  const handleLoad = () => {
+  const handleLoad = useCallback(() => {
     setIsLoading(true);
     setError(false);
-  };
+  }, []);
 
-  const handleLoadEnd = () => {
+  const handleLoadEnd = useCallback(() => {
     setIsLoading(false);
-  };
+  }, []);
 
-  const handleError = () => {
+  const handleError = useCallback(() => {
     setIsLoading(false);
     setError(true);
-  };
+  }, []);
+
+  const handleNavigationStateChange = useCallback(
+    (navState: WebViewNavigation) => {
+      setCanGoBack(navState.canGoBack);
+    },
+    [],
+  );
+
+  const handleBackPress = useCallback(() => {
+    if (canGoBack && webviewRef.current) {
+      (webviewRef.current as any).goBack();
+      return true;
+    } else {
+      return false;
+    }
+  }, [canGoBack, webviewRef, navigation]);
+
+  useBackHandler(handleBackPress);
 
   return (
     <View style={styles.container}>
       {!error ? (
         <WebView
+          ref={webviewRef}
           source={{
             uri: 'https://www.govsomaliland.online/user/signin/?apple=1',
           }}
@@ -69,6 +91,7 @@ export default function Login() {
           onLoad={handleLoad}
           onLoadEnd={handleLoadEnd}
           onError={handleError}
+          onNavigationStateChange={handleNavigationStateChange}
         />
       ) : (
         <View style={styles.errorContainer}>
