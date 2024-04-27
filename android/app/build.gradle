@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.somaliland"
+    namespace "com.redspider.somaliland"
     defaultConfig {
-        applicationId "com.somaliland"
+        applicationId "com.redspider.somaliland"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

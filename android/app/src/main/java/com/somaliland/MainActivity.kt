@@ -1,4 +1,4 @@
-package com.somaliland
+package com.redspider.somaliland
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

@@ -1,4 +1,4 @@
-package com.somaliland
+package com.redspider.somaliland
 
 import android.app.Application
 import com.facebook.react.PackageList
